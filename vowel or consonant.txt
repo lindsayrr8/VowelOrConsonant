@@ -1,0 +1,38 @@
+
+# Vowel or Consonant
+
+import java.util.Scanner;
+
+public class VowelOrConsonant {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a letter
+        System.out.print("Enter a letter to see if it is a vowel or a consonant: ");
+        String input = scanner.nextLine();
+
+        // Close the scanner to prevent resource leak
+        scanner.close();
+
+        // Check if the input is a single letter
+        if (input.length() != 1) {
+            System.out.println(input + " is an invalid input. Must enter exactly one letter. ");
+        } else {
+            // Convert the input to lowercase for easier comparison
+            char letter = Character.toLowerCase(input.charAt(0));
+
+            // Check if the input is a letter
+            if (Character.isLetter(letter)) {
+                // Check if the input is a vowel
+                if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
+                    System.out.println(input + " is a vowel. ");
+                } else {
+                    System.out.println(input + " is a consonant. ");
+                }
+            } else {
+                System.out.println(input + " is an invalid input. Must enter a letter. ");
+            }
+        }
+    }
+}
